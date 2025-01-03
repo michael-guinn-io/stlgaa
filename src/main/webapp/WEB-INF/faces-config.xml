@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="4.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                                  https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd" >
+
+    <application>
+        <locale-config>
+            <default-locale>en_US</default-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>org.stlgaa.copy</base-name>
+            <var>cpy</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>org.stlgaa.errors</base-name>
+            <var>err</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>org.stlgaa.seo</base-name>
+            <var>seo</var>
+        </resource-bundle>
+    </application>
+
+</faces-config>

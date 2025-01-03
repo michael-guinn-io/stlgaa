@@ -1,0 +1,33 @@
+name: stlgaa
+services:
+  app:
+    container_name: stlgaa-web
+    image: "quay.io/wildfly/wildfly"
+    environment:
+      - WILDFLY_USER=admin
+      - WILDFLY_PASS=adminPassword
+      - DB_NAME=sample
+      - DB_USER=mysql
+      - DB_PASS=mysql
+      - DB_URI=db:3306
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+  db:
+    container_name: stlgaa-db
+    image: "mysql:latest"
+    environment:
+      - MYSQL_DATABASE=stlgaa
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+      - MYSQL_ROOT_PASSWORD=supersecret
+    volumes:
+      - ./workdir/db/init/:/docker-entrypoint-initdb.d/ # init database
+      - ./workdir/db/data/:/var/lib/mysql/              # data storage
+    ports:
+      - "3306:3306"
+networks:
+  default:
+    driver: bridge

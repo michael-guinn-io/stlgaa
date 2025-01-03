@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/global-template.xhtml">
+
+   <ui:define name="content.body">
+
+      <h:form>
+
+         <p:outputLabel for="loginUsername" value="${cpy['global.user.emailaddress']}" />
+         <p:inputText id="loginUsername" type="email" value="#{loginForm.username}" converter="EmailConverter" />
+
+         <p:outputLabel for="loginPassword" value="#{cpy['global.credentials.password']}" />
+         <p:password id="loginPassword" value="#{loginForm.password}" />
+
+         <p:inputSwitch id="loginRememberMe" value="#{loginForm.rememberMe}" />
+         <p:outputLabel for="loginRememberMe" value="#{cpy['login.loginform.rememberMe']}" />
+
+         <p:commandButton ajax="false" action="#{loginForm.login}" value="#{cpy['login.loginform.submit']}" />
+
+      </h:form>
+
+   </ui:define>
+
+</ui:composition>
+

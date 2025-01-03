@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/global-template.xhtml">
+
+   <ui:define name="content.body">
+
+      <h:form>
+
+         <p:fieldset legend="#{cpy['register.registrationform.userlegend']}">
+
+            <p:outputLabel for="@next" value="#{cpy['global.user.firstname']}" />
+            <p:inputText id="firstName" value="#{registrationForm.user.firstName}" required="true" />
+
+            <p:outputLabel for="@next" value="#{cpy['global.user.lastname']}" />
+            <p:inputText id="lastName" value="#{registrationForm.user.lastName}" required="true" />
+
+            <p:outputLabel for="@next" value="#{cpy['global.user.emailaddress']}" />
+            <p:inputText id="emailAddress" type="email" converter="EmailConverter" value="#{registrationForm.user.emailAddress}"
+                         required="true" />
+
+            <p:outputLabel for="@next" value="#{cpy['global.user.phonenumber']}" />
+            <p:inputMask id="phoneNumber" value="#{registrationForm.user.phoneNumber}" type="tel" mask="(999) 999-9999" />
+
+            <p:outputLabel for="@next" value="#{cpy['global.user.birthday']}" />
+            <p:datePicker id="birthday" value="#{registrationForm.user.birthday}" monthNavigator="true" yearNavigator="true"
+                          pattern="MM/dd/yyyy" showButtonBar="true" touchUI="true" yearRange="java.time.LocalDate.now().minusYears(100)"
+                          mask="true" showIcon="true" showOnFocus="false" />
+
+            <p:divider />
+
+            <p:outputLabel for="@next" value="#{cpy['global.credentials.password']}" />
+            <p:password id="password" value="#{registrationForm.password}" toggleMask="true" match="confirmPassword"
+                        validator="PasswordValidator" required="true"/>
+
+            <p:outputLabel for="@next" value="#{cpy['global.credentials.confirmpassword']}" />
+            <p:password id="confirmPassword" toggleMask="true" required="true" />
+
+            <p:divider />
+
+            <p:link outcome="index" value="#{cpy['global.forms.goback']}" />
+            <p:commandButton value="#{cpy['register.registrationform.register']}" ajax="false" action="#{registrationForm.register()}" />
+
+         </p:fieldset>
+
+      </h:form>
+
+   </ui:define>
+
+</ui:composition>
+

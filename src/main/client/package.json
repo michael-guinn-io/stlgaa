@@ -1,0 +1,23 @@
+{
+  "name": "stlgaa-web",
+  "version": "1.0.0",
+  "description": "Client-side styles and scripts for STLGAA web app",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Guinn",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "sass": "^1.83.0",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "normalize-scss": "^8.0.0"
+  }
+}

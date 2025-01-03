@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-source-infos>
+      <data-source-info id="c2fd3d26-0c37-4cbd-8172-eddb6ea1a9bb" persistence-unit-name="stlgaa:stlgaa-persistence" />
+    </data-source-infos>
+  </component>
+</project>
